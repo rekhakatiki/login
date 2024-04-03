@@ -6,9 +6,9 @@ import { AnagramComponent } from './anagram/anagram.component';
 import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
-    { path: 'login' , component:LoginComponent},
-    { path : 'dashboard' , component:DashboardComponent },
-    { path :'fabonacci' ,component:FibonacciComponent},
-    { path : 'anagram' , component:AnagramComponent},
+    { path: 'login', component: LoginComponent },
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'fabonacci', component: FibonacciComponent, canActivate: [AuthGuard] },
+    { path: 'anagram', component: AnagramComponent, canActivate: [AuthGuard] },
     { path: '**', redirectTo: '/login' }
 ];

@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit{
       .subscribe(
         response => {
           if(response){
+            const data = response;
+            localStorage.setItem('auth_token', response?.token);
+            delete data?.token;
             this.route.navigateByUrl('/dashboard');
           }
         },

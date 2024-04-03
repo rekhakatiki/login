@@ -22,6 +22,7 @@ export class DashboardComponent {
     this.route.navigateByUrl('/anagram')
   }
   logout(){
+    localStorage.clear();
     this.route.navigateByUrl('/login')
   }
 }

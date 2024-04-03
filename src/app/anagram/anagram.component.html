@@ -1,9 +1,26 @@
-<label>First string</label>
-<input type="text" #str1 >
-<label>Second string</label>
-<input type="text" #str2 >
-<button (click)="anagram(str1,str2)">Check for Anagram</button>
-<div *ngIf="isAnagram !== null">
+<div class="container">
+  <label>First string : </label>
+  <input type="text" #str1 >
+  <label style="padding-left:25px">Second string : </label>
+  <input type="text" #str2 >&nbsp;&nbsp;&nbsp;&nbsp;
+  <button (click)="anagram(str1,str2)">Check for Anagram</button>
+</div>
+<!-- <div *ngIf="isAnagram !== null">
     <p *ngIf="isAnagram">The strings are anagrams!</p>
     <p *ngIf="!isAnagram">The strings are not anagrams.</p>
-  </div>
+  </div> -->
+  <div class="container" > 
+  <table style="width:100%">
+    <tr >
+      <th>First String</th>
+      <th> Second String</th>
+      <th>Result</th>
+    </tr>
+    <tr *ngFor="let data of anagramArray">
+      <td>{{data.string1}}</td>
+      <td>{{data.string2}}</td>
+      <td>{{data.result}}</td>
+    </tr>
+  </table>
+  <div><button class="export" (click)="onExport()">Export</button></div>
+</div>
